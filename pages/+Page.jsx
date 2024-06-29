@@ -1,4 +1,4 @@
-import { Share } from "../src/app/share/index";
+import {Share} from "../src/app/share/index.js";
 
 export default Page;
 
@@ -25,7 +25,8 @@ function Page() {
       <hr />
       <Routes>
         <Route exact path="/" element={<Home />} />
-        <Route path="/share" element={<Share />} />
+        <Route path="/share" element={<About />} />
+      <Route path="/share" element={<Share />} />
       </Routes>
     </>
   );
@@ -44,7 +45,11 @@ function Home() {
 }
 
 function About() {
-  return (
+    const document = useDocument()
+    document.title = 'Awesome Product'
+    document.head.add(<meta name="description" content="This product helps you with...">)
+    document.head.add(<meta property="og:image" content="http://thumbnail.10x10.co.kr/webimage/image/basic600/408/B004089332-1.jpg?cmd=thumb&w=500&h=500&fit=true&ws=false" />)
+    return (
     <>
       <h2>About</h2>
       <p>
@@ -54,38 +59,5 @@ function About() {
         This page is rendered to HTML, see <Code>view-source:http://localhost:3000/about</Code>.
       </p>
     </>
-  );
-}
-
-function Code(props) {
-  const style = {
-    backgroundColor: "#eaeaea",
-    padding: "1px 4px",
-    borderRadius: "3px",
-    ...props.style,
-  };
-  return <code {...props} style={style} />;
-}
-
-function TimeElapsed() {
-  const [count, setCount] = useState(0);
-
-  useEffect(() => {
-    const timeout = setInterval(() => {
-      setCount((c) => c + 1);
-    }, 1000);
-    return () => clearTimeout(timeout);
-  }, []);
-
-  return <>{count}</>;
-}
-
-function Counter() {
-  const [count, setCount] = useState(0);
-
-  return (
-    <button onClick={() => setCount((count) => count + 1)} style={{ marginLeft: 10 }}>
-      Counter {count}
-    </button>
   );
 }
