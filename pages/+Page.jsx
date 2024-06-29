@@ -1,4 +1,4 @@
-import { Share } from "../src/app/share/index.js";
+import { Share } from "../src/app/share/index";
 
 export default Page;
 
