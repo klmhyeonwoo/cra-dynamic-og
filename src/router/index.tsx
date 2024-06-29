@@ -1,12 +1,17 @@
 import {createBrowserRouter, RouterProvider} from "react-router-dom";
 import {DefaultLayout} from "@/layout/default.tsx";
 import {Fragment} from "react";
-import App from "@/App.tsx";
+import {Main} from "@/app/main";
+import {Share} from "@/app/share";
 
 const routerChildren = [
     {
         path: '/',
-        element: <App/>
+        element: <Main/>
+    },
+    {
+        path: '/share',
+        element: <Share/>
     }
 ]
 
