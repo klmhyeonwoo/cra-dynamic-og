@@ -1,4 +1,4 @@
-import {Share} from "../src/app/share/index.js";
+import { Share } from "../src/app/share/index.js";
 
 export default Page;
 
@@ -26,7 +26,7 @@ function Page() {
       <Routes>
         <Route exact path="/" element={<Home />} />
         <Route path="/share" element={<About />} />
-      <Route path="/share" element={<Share />} />
+        <Route path="/share" element={<Share />} />
       </Routes>
     </>
   );
@@ -45,11 +45,16 @@ function Home() {
 }
 
 function About() {
-    const document = useDocument()
-    document.title = 'Awesome Product'
-    document.head.add(<meta name="description" content="This product helps you with...">)
-    document.head.add(<meta property="og:image" content="http://thumbnail.10x10.co.kr/webimage/image/basic600/408/B004089332-1.jpg?cmd=thumb&w=500&h=500&fit=true&ws=false" />)
-    return (
+  const document = useDocument();
+  document.title = "Awesome Product";
+  document.head.add(<meta name="description" content="This product helps you with..." />);
+  document.head.add(
+    <meta
+      property="og:image"
+      content="http://thumbnail.10x10.co.kr/webimage/image/basic600/408/B004089332-1.jpg?cmd=thumb&w=500&h=500&fit=true&ws=false"
+    />,
+  );
+  return (
     <>
       <h2>About</h2>
       <p>
