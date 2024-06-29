@@ -1,3 +1,5 @@
+import { Share } from "../src/app/share/index";
+
 export default Page;
 
 import React, { useEffect, useState } from "react";
@@ -23,7 +25,7 @@ function Page() {
       <hr />
       <Routes>
         <Route exact path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
+        <Route path="/share" element={<Share />} />
       </Routes>
     </>
   );
